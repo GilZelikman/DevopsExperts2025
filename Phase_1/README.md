@@ -27,8 +27,8 @@ flask-docker-app/
    1. **Clone the Repository:**
     
         ```bash
-        git clone <repository-url>
-        cd flask-docker-app
+        git clone https://github.com/GilZelikman/DevopsExperts2025/tree/42c05a1aed355048610811410ebcc3ffa840bc6b/Phase_1
+        cd Phase_1
         ```
     
    2. Set Up a Virtual Environment (Optional but Recommended):
