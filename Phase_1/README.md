@@ -50,7 +50,7 @@ flask-docker-app/
 1. **Start the Flask Application:**
     
     ```bash
-        python app.py
+    python app.py
     ```
     
 2. **Access the Application:**
@@ -71,7 +71,7 @@ flask-docker-app/
    
 2. **Run the Container:**
     ```bash
-      docker run -p 5000:5000 flask-app
+    docker run -p 5000:5000 flask-app
     ```
 3. **Access the Application:**
 
@@ -81,30 +81,26 @@ flask-docker-app/
 
 1. **Build and Start the Application:**
 
-
-docker-compose up --build -d
-
+    ```bash
+    docker-compose up --build -d
+    ```
 
 2. **Stop the Application:**
-
-docker-compose down
-
+    ```bash
+    docker-compose down
+    ```
 
 ## Custom Configuration
-    The app can be modified to include more routes, logging, database connectivity, and additional configurations.
+- The app can be modified to include more routes, logging, database connectivity, and additional configurations.
+- Modify app.py to add more functionality.
+- Update requirements.txt to include additional dependencies.
+- Customize docker-compose.yml to integrate other services (e.g., databases).
 
-Modify app.py to add more functionality.
+## Known Issues
+- Port Conflicts: Ensure port 5000 is available before running the container.
 
-Update requirements.txt to include additional dependencies.
+- Docker Build Issues: If the build fails, clear the cache with:
 
-Customize docker-compose.yml to integrate other services (e.g., databases).
-
-Known Issues
-Port Conflicts: Ensure port 5000 is available before running the container.
-
-Docker Build Issues: If the build fails, clear the cache with:
-
-bash
-Copy
-Edit
+```bash
 docker system prune -a
+```
