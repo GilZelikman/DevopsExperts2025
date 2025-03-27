@@ -50,7 +50,7 @@ flask-docker-app/
 1. **Start the Flask Application:**
     
     ```bash
-    python app.py
+    python flask_app.py
     ```
     
 2. **Access the Application:**
@@ -92,7 +92,7 @@ flask-docker-app/
 
 ## Custom Configuration
 - The app can be modified to include more routes, logging, database connectivity, and additional configurations.
-- Modify app.py to add more functionality.
+- Modify flask_app.py to add more functionality.
 - Update requirements.txt to include additional dependencies.
 - Customize docker-compose.yml to integrate other services (e.g., databases).
 

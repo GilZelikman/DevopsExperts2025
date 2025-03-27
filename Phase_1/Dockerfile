@@ -5,7 +5,7 @@ FROM python:3.13
 WORKDIR /app
 
 # Copy the application files
-COPY app.py requirements.txt /app/
+COPY flask_app.py requirements.txt /app/
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5000
 
 # Command to run the application
-CMD ["python", "app.py"]
+CMD ["python", "flask_app.py"]
