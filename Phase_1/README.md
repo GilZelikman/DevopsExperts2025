@@ -20,15 +20,13 @@ flask-docker-app/
 ├── docker-compose.yml    # Docker Compose configuration
 └── README.md             # Documentation
 
+```
 
-
-##Installation
-###Locally
+## Installation
+### Locally
    1. **Clone the Repository:**
     
         ```bash
-        Copy
-        Edit
         git clone <repository-url>
         cd flask-docker-app
         ```
@@ -36,8 +34,6 @@ flask-docker-app/
    2. Set Up a Virtual Environment (Optional but Recommended):
     
         ```bash
-        Copy
-        Edit
         python -m venv venv
         source venv/bin/activate   # On Windows: venv\Scripts\activate
         ```
@@ -45,61 +41,57 @@ flask-docker-app/
    3. **Install Dependencies:**
     
         ```bash
-        Copy
-        Edit
         pip install -r requirements.txt
-        
-        
-   ## Running the Application Locally
-        
-        
-    1. **Start the Flask Application:**
-    
-        ```bash
-        Copy
-        Edit
-        python app.py
         ```
+        
+## Running the Application Locally
+        
+        
+1. **Start the Flask Application:**
     
-    2. **Access the Application:**
+    ```bash
+        python app.py
+    ```
     
-        Open your browser and visit http://127.0.0.1:5000
+2. **Access the Application:**
+    
+    Open your browser and visit http://127.0.0.1:5000
         
         
 
-Deployment with Docker
-Using Docker (Standalone Container)
-Build the Docker Image:
+## Deployment with Docker
 
-bash
-Copy
-Edit
-docker build -t flask-app .
-Run the Container:
+### Using Docker (Standalone Container)
 
-bash
-Copy
-Edit
-docker run -p 5000:5000 flask-app
-Access the Application:
+1. **Build the Docker Image:**
 
-Open your browser and visit http://localhost:5000
+     ```bash
+    docker build -t flask-app .
+    ```
+   
+2. **Run the Container:**
+    ```bash
+      docker run -p 5000:5000 flask-app
+    ```
+3. **Access the Application:**
 
-Using Docker Compose (Recommended)
-Build and Start the Application:
+    Open your browser and visit http://localhost:5000
 
-bash
-Copy
-Edit
+### Using Docker Compose (Recommended)
+
+1. **Build and Start the Application:**
+
+
 docker-compose up --build -d
-Stop the Application:
 
-bash
-Copy
-Edit
+
+2. **Stop the Application:**
+
 docker-compose down
-Custom Configuration
-The app can be modified to include more routes, logging, database connectivity, and additional configurations.
+
+
+## Custom Configuration
+    The app can be modified to include more routes, logging, database connectivity, and additional configurations.
 
 Modify app.py to add more functionality.
 
