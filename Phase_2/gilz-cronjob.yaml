@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: gilz-flask-health-check
+  namespace: gilz
+spec:
+  schedule: "*/1 * * * *"  # Run every minute
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: gilz-flask-health-check
+              image: curlimages/curl:latest
+              command:
+                - "curl"
+                - "-f"
+                - "http://gilz-service:5000"  # Replace with the health check URL
+          restartPolicy: OnFailure  # Correct placement of restartPolicy

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gilz-config
+data:
+  FLASK_ENV: "production"
+  SECRET_KEY: "mysecretkey"

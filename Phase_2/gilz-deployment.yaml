@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gilz-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gilz-app
+  template:
+    metadata:
+      labels:
+        app: gilz-app
+    spec:
+      imagePullSecrets:
+      - name: gilz-docker-secret  #  Pull private image
+      containers:
+        - name: gilz-flask
+          image: gilzelik/gilz-flask-app:2.0
+          ports:
+            - containerPort: 5000
+          envFrom:
+            - configMapRef:
+                name: gilz-config  # Load environment variables
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 5000
+            initialDelaySeconds: 10   # Delay before the first check
+            periodSeconds: 5           # Check readiness every 5 seconds
+          resources:
+            requests:
+              memory: "128Mi"      # Minimum memory required
+              cpu: "250m"          # Minimum CPU required
+            limits:
+              memory: "256Mi"      # Maximum memory allowed
+              cpu: "500m"          # Maximum CPU allowed
