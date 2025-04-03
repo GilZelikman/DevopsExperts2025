@@ -4,11 +4,11 @@
 - [Overview](#overview)
 - [Prerequisites](#prerequisites)
 - [Cluster Setup](#cluster-setup)
-- [Deployment](#deployment)
 - [Configuration Management](#configuration-management)
 - [Autoscaling](#autoscaling)
 - [Monitoring](#monitoring)
 - [CronJobs](#cronjobs)
+- [Deployment](#deployment)
 - [Files Included](#files-included)
 
 ## Overview
@@ -29,16 +29,6 @@ This guide provides step-by-step instructions for setting up a Kubernetes cluste
 2. Verify the cluster is running:
    ```sh
    kubectl get nodes
-   ```
-
-## Deployment
-1. Apply the deployment manifest:
-   ```sh
-   kubectl apply -f gilz-deployment.yaml
-   ```
-2. Apply the service to expose the application:
-   ```sh
-   kubectl apply -f gilz-service.yaml
    ```
 
 ## Configuration Management
@@ -79,6 +69,16 @@ kubectl get hpa
 2. Verify the CronJob:
    ```sh
    kubectl get cronjobs
+   ```
+
+## Deployment
+1. Apply the service to expose the application:
+   ```sh
+   kubectl apply -f gilz-service.yaml
+   ```
+2. Apply the deployment manifest:
+   ```sh
+   kubectl apply -f gilz-deployment.yaml
    ```
 
 ## Files Included
