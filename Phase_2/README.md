@@ -17,13 +17,15 @@ This guide provides step-by-step instructions for setting up a Kubernetes cluste
 ## Prerequisites
 - Docker installed
 - Kubernetes CLI (`kubectl`) installed
-- Minikube or k3s installed
+- Docker Desktop installed with Kubernetes enabled
 
 ## Cluster Setup
-1. Start Minikube:
-   ```sh
-   minikube start
-   ```
+1. Ensure Kubernetes is enabled in Docker Desktop:
+   - Open Docker Desktop
+   - Go to **Settings > Kubernetes**
+   - Check **Enable Kubernetes** and apply the changes
+   - Wait for Kubernetes to start
+
 2. Verify the cluster is running:
    ```sh
    kubectl get nodes
@@ -50,9 +52,9 @@ This guide provides step-by-step instructions for setting up a Kubernetes cluste
   ```
 
 ## Autoscaling
-1. Enable the metrics server (required for HPA):
+1. Install the metrics server (required for HPA):
    ```sh
-   minikube addons enable metrics-server
+   kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
    ```
 2. Apply the Horizontal Pod Autoscaler (HPA):
    ```sh
