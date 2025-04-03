@@ -17,14 +17,10 @@ This guide provides step-by-step instructions for setting up a Kubernetes cluste
 ## Prerequisites
 - Docker installed
 - Kubernetes CLI (`kubectl`) installed
-- Minikube or k3s installed
+- Minikube or k3s installed or DockerDesktop
 
 ## Cluster Setup
-1. Start Minikube:
-   ```sh
-   minikube start
-   ```
-2. Verify the cluster is running:
+1. Verify the cluster is running:
    ```sh
    kubectl get nodes
    ```
